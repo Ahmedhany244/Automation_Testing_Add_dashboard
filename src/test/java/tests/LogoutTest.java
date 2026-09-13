@@ -7,7 +7,7 @@ import pages.DashboardPage;
 public class LogoutTest extends BaseTest{
     private static final String VALID_USERNAME = "hany";
     private static final String VALID_PASSWORD = "P@ssw0rd";
-    @Test
+    @Test(groups = {"smoke"})
     public void logoutRedirectsToLoginPage()   {
 
 

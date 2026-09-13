@@ -1,5 +1,5 @@
 package tests;
 
-public class ManageDashboardTest extends BaseTest {
+public class ManageDashboardTest extends AuthenticatedBaseTest {
 
 }

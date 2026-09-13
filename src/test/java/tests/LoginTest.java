@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
     private static final String INVALID_PASSWORD = "wrongPass";
     private static final String LOGIN_FAILED_MESSAGE = "Login Failed!";
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWithValidCredentialsRedirectsToDashboard() {
         loginPage.setUsername(VALID_USERNAME);
         loginPage.setPassword(VALID_PASSWORD);
@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(dashboardPage.isWelcomeTextDisplayed(), "Welcome text not visible");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void loginWithInvalidCredentialsShowsError() {
         loginPage.setUsername(INVALID_USERNAME);
         loginPage.setPassword(INVALID_PASSWORD);
@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getLoginErrorMessage(), LOGIN_FAILED_MESSAGE);
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void logoutRedirectsToLoginPage() {
 
         loginPage.setUsername(VALID_USERNAME);
